@@ -76,6 +76,7 @@ class MotorlabGUI(Plugin):
         self.PC_to_Arduino.ir_checked = 0
         self.PC_to_Arduino.ultra_checked = 0
 
+        self.text_field_angle = 0
 
         self._widget.set_stepper.textChanged.connect(self._on_set_stepper_changed)
         self._widget.send_stepper.pressed.connect(self._on_send_stepper_pressed)
@@ -176,9 +177,10 @@ class MotorlabGUI(Plugin):
     #         self._publisher = rospy.Publisher(topic, Twist)
 
     def _on_set_stepper_changed(self, degrees):
-        self.PC_to_Arduino.stepper_angle = int(degrees)
+        self.text_field_angle = int(degrees)
 
     def _on_send_stepper_pressed(self):
+        self.PC_to_Arduino.stepper_angle = self.text_field_angle
         self._publisher.publish(self.PC_to_Arduino)
         self.PC_to_Arduino.stepper_angle = 0
         self._publisher.publish(self.PC_to_Arduino)
