@@ -5,11 +5,11 @@
     </description>
     <qtgui>
       <group>
-        <label>Robot Tools</label>
+        <label>MotorLab</label>
         <icon type="theme">folder</icon>
-        <statustip>Plugins related to robot tools.</statustip>
+        <statustip>Plugins related to MRSD Sensors and Motor Lab.</statustip>
       </group>
-      <label>Robot Steering</label>
+      <label>MotorLab GUI</label>
       <icon type="theme">input-gaming</icon>
       <statustip>A Python GUI for our MRSD Project.</statustip>
     </qtgui>
