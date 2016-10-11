@@ -1,0 +1,35 @@
+<package>
+  <name>rqt_motorlab_gui</name>
+  <version>0.5.4</version>
+  <description>rqt_motorlab_gui provides a GUI plugin for steering a robot using Twist messages.</description>
+  <maintainer email="ablasdel@gmail.com">Aaron Blasdel</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/rqt_motorlab_gui</url>
+  <url type="repository">https://github.com/ros-visualization/rqt_robot_plugins</url>
+  <url type="bugtracker">https://github.com/ros-visualization/rqt_robot_plugins/issues</url>
+
+  <author>Dirk Thomas</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>motorlab_msgs</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend version_gte="0.2.19">python_qt_binding</run_depend>
+  <run_depend>python-rospkg</run_depend>
+  <run_depend>rostopic</run_depend>
+  <run_depend>rqt_gui</run_depend>
+  <run_depend>rqt_gui_py</run_depend>
+
+  <run_depend>motorlab_msgs</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+  <export>
+    <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+</package>

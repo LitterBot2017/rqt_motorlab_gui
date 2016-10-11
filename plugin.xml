@@ -1,0 +1,17 @@
+<library path="src">
+  <class name="MotorlabGUI" type="rqt_motorlab_gui.motorlab_gui.MotorlabGUI" base_class_type="rqt_gui_py::Plugin">
+    <description>
+      A Python GUI for our MRSD Project.
+    </description>
+    <qtgui>
+      <group>
+        <label>Robot Tools</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to robot tools.</statustip>
+      </group>
+      <label>Robot Steering</label>
+      <icon type="theme">input-gaming</icon>
+      <statustip>A Python GUI for our MRSD Project.</statustip>
+    </qtgui>
+  </class>
+</library>
