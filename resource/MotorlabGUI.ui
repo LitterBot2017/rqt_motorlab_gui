@@ -41,6 +41,62 @@
       <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+            <widget class="QLineEdit" name="set_motor_velocity">
+              <property name="toolTip">
+                <string>Motor velocity</string>
+              </property>
+              <property name="text">
+                <string/>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QPushButton" name="send_motor_velocity">
+              <property name="toolTip">
+                <string>Send Motor Velocity</string>
+              </property>
+              <property name="text">
+                <string>Send Motor Velocity</string>
+              </property>
+            </widget>
+          </item>
+        </layout>
+      </item>
+        </layout>
+      </item>
+      <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+            <widget class="QLineEdit" name="set_motor_angle">
+              <property name="toolTip">
+                <string>Motor angle</string>
+              </property>
+              <property name="text">
+                <string/>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QPushButton" name="send_motor_angle">
+              <property name="toolTip">
+                <string>Send Motor Angle</string>
+              </property>
+              <property name="text">
+                <string>Send Motor Angle</string>
+              </property>
+            </widget>
+          </item>
+        </layout>
+      </item>
+      </layout>
+      </item>
+      <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
             <widget class="QLabel" name="Actuator_Selection">
               <property name="toolTip">
                 <string>Actuator Selection</string>
