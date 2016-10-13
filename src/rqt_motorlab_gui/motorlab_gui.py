@@ -75,11 +75,21 @@ class MotorlabGUI(Plugin):
         self.PC_to_Arduino.light_gate_checked = 0
         self.PC_to_Arduino.ir_checked = 0
         self.PC_to_Arduino.ultra_checked = 0
+        self.PC_to_Arduino.motor_velocity = 0
+        self.PC_to_Arduino.motor_angle = 0
 
         self.text_field_angle = 0
+        self.text_field_motor_velocity= 0
+        self.text_field_motor_angle = 0
 
         self._widget.set_stepper.textChanged.connect(self._on_set_stepper_changed)
         self._widget.send_stepper.pressed.connect(self._on_send_stepper_pressed)
+
+        self._widget.set_motor_velocity.textChanged.connect(self._on_set_motor_velocity)
+        self._widget.send_motor_velocity.pressed.connect(self._on_send_motor_velocity)
+
+        self._widget.set_motor_angle.textChanged.connect(self._on_set_motor_angle)
+        self._widget.send_motor_angle.pressed.connect(self._on_send_motor_angle)
 
         self._widget.motor_position_checkbox.clicked.connect(self._on_motor_position_checkbox_clicked)
         self._widget.motor_speed_checkbox.clicked.connect(self._on_motor_speed_checkbox_clicked)
@@ -187,6 +197,26 @@ class MotorlabGUI(Plugin):
         self.PC_to_Arduino.stepper_angle = self.text_field_angle
         self._publisher.publish(self.PC_to_Arduino)
         self.PC_to_Arduino.stepper_angle = 0
+        self._publisher.publish(self.PC_to_Arduino)
+
+    def _on_set_motor_velocity(self,velocity):
+        try:
+            self.text_field_motor_velocity = int(velocity)
+        except Exception, e:
+            self.text_field_motor_velocity = 0
+
+    def _on_send_motor_velocity(self):
+        self.PC_to_Arduino.motor_velocity = self.text_field_motor_velocity
+        self._publisher.publish(self.PC_to_Arduino)
+
+    def _on_set_motor_angle(self,angle):
+        try:
+            self.text_field_motor_angle = int(angle)
+        except Exception, e:
+            self.text_field_motor_angle = 0    
+
+    def _on_send_motor_angle(self):
+        self.PC_to_Arduino.motor_angle = self.text_field_motor_angle
         self._publisher.publish(self.PC_to_Arduino)
 
     def _on_motor_position_checkbox_clicked(self):
