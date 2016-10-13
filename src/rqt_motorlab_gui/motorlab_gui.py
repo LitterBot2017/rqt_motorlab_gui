@@ -187,7 +187,11 @@ class MotorlabGUI(Plugin):
     #         self._publisher = rospy.Publisher(topic, Twist)
 
     def _on_set_stepper_changed(self, degrees):
-        self.text_field_angle = int(degrees)
+        try:
+            self.text_field_angle = int(degrees)
+        except Exception, e:
+            self.text_field_angle = 0
+        
 
     def _on_send_stepper_pressed(self):
         self.PC_to_Arduino.stepper_angle = self.text_field_angle
@@ -196,14 +200,20 @@ class MotorlabGUI(Plugin):
         self._publisher.publish(self.PC_to_Arduino)
 
     def _on_set_motor_velocity(self,velocity):
-        self.text_field_motor_velocity = int(velocity)
+        try:
+            self.text_field_motor_velocity = int(velocity)
+        except Exception, e:
+            self.text_field_motor_velocity = 0
 
     def _on_send_motor_velocity(self):
         self.PC_to_Arduino.motor_velocity = self.text_field_motor_velocity
         self._publisher.publish(self.PC_to_Arduino)
 
     def _on_set_motor_angle(self,angle):
-        self.text_field_motor_angle = int(angle)
+        try:
+            self.text_field_motor_angle = int(angle)
+        except Exception, e:
+            self.text_field_motor_angle = 0    
 
     def _on_send_motor_angle(self):
         self.PC_to_Arduino.motor_angle = self.text_field_motor_angle
